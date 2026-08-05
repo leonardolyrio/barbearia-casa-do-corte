@@ -1,0 +1,118 @@
+/* ==========================================================
+   Casa do Corte — Paleta e variáveis
+   ========================================================== */
+:root {
+  --bg:     #EDE7DC;  /* off-white quente */
+  --ink:    #1A1715;  /* preto carvão */
+  --accent: #8B2E1F;  /* vermelho-tijolo-queimado */
+  --rule:   #C9BFA9;  /* linhas finas, divisores */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-sans {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ==========================================================
+   Reveal — scroll animações de entrada (Geral)
+   ========================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   Reveal Text — animação palavra por palavra vindo da direita
+   ========================================================== */
+.word {
+  opacity: 0;
+  transform: translateX(15px); /* Surgindo da direita */
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  display: inline-block;
+}
+
+.reveal-text.in .word {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================
+   Hero — Animação de entrada no carregamento
+   ========================================================== */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Cascata de tempos para cada elemento */
+.hero-delay-1 { animation-delay: 0.1s; }
+.hero-delay-2 { animation-delay: 0.3s; }
+.hero-delay-3 { animation-delay: 0.5s; }
+.hero-delay-4 { animation-delay: 0.7s; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   Nav header adaptável
+   ========================================================== */
+header#nav {
+  color: var(--bg);
+}
+header#nav.scrolled {
+  background-color: rgba(237, 231, 220, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+/* Classe adicionada pelo JS para garantir que o logo fique escuro quando o menu mobile abrir */
+header#nav.menu-open {
+  color: var(--ink);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* ==========================================================
+   Hero — imagem de fundo
+   ========================================================== */
+.hero-bg {
+  background-image: url('public/images/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

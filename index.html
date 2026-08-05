@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa do Corte. Barbearia desde 1987, Vila Madalena.</title>
+  <meta name="description" content="Corte de cabelo, barba e conversa. Vila Madalena, há 38 anos.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Nav -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="font-sans text-xl font-semibold tracking-tight transition-colors relative z-[60]">Casa do Corte</a>
+      
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex gap-8 text-sm font-sans">
+        <a href="#manifesto" class="hover:text-[#8B2E1F] transition-colors">Manifesto</a>
+        <a href="#cortes" class="hover:text-[#8B2E1F] transition-colors">Cortes</a>
+        <a href="#casa" class="hover:text-[#8B2E1F] transition-colors">A casa</a>
+      </nav>
+      <a href="https://wa.me/5511999999999" class="font-mono text-xs hidden md:block hover:text-[#8B2E1F] transition-colors relative z-[60]">
+        +55 11 9 9999-9999
+      </a>
+
+      <!-- Botão Menu Mobile -->
+      <button id="btn-menu" class="md:hidden relative z-[60] p-2 -mr-2 focus-visible:outline-none" aria-label="Abrir menu">
+        <!-- Ícone Hambúrguer -->
+        <svg id="icon-menu-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 block">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+        </svg>
+        <!-- Ícone Fechar (X) -->
+        <svg id="icon-menu-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 hidden">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Tela do Menu Mobile (Overlay) -->
+    <div id="menu-mobile" class="fixed inset-0 bg-[color:var(--bg)] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+      <nav class="flex flex-col items-center gap-10 font-sans text-3xl font-medium text-[color:var(--ink)]">
+        <a href="#manifesto" class="mobile-link hover:text-[color:var(--accent)] transition-colors">Manifesto</a>
+        <a href="#cortes" class="mobile-link hover:text-[color:var(--accent)] transition-colors">Cortes</a>
+        <a href="#casa" class="mobile-link hover:text-[color:var(--accent)] transition-colors">A casa</a>
+      </nav>
+      <div class="mt-16 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-[color:var(--ink)]/50 mb-4">Marcar a cadeira</p>
+        <a href="https://wa.me/5511999999999" class="font-mono text-sm px-8 py-4 bg-[color:var(--accent)] text-[color:var(--bg)] hover:bg-[#702418] transition-colors rounded-sm inline-block">
+          +55 11 9 9999-9999
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative min-h-[100dvh] flex items-end overflow-hidden bg-[#1A1715]">
+    <div class="absolute inset-0 w-full h-full hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1A1715]/80 via-[#1A1715]/50 to-[#1A1715]/95"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-12 md:pb-20 w-full drop-shadow-md">
+      <p class="hero-animate hero-delay-1 font-mono text-xs uppercase tracking-[0.18em] text-[#EDE7DC]/90 mb-4">
+        Vila Madalena. Desde 1987.
+      </p>
+      <h1 class="hero-animate hero-delay-2 font-sans font-semibold text-[#EDE7DC] text-[clamp(2.25rem,6vw,5rem)] leading-[0.98] tracking-[-0.02em] max-w-4xl">
+        Corte, barba, conversa.
+      </h1>
+      <p class="hero-animate hero-delay-3 font-sans text-base md:text-lg text-[#EDE7DC]/90 mt-6 max-w-xl font-light">
+        Barbearia de bairro, no mesmo endereço há 38 anos. Cadeira marcada, café servido, sem pressa.
+      </p>
+      <div class="hero-animate hero-delay-4 mt-8 flex flex-wrap gap-4">
+        <a href="#agendar"
+           class="inline-flex items-center font-mono text-sm px-7 py-3.5 bg-[#8B2E1F] text-[#EDE7DC] hover:bg-[#702418] transition-colors rounded-sm">
+          Marcar a cadeira
+        </a>
+        <a href="#cortes"
+           class="inline-flex items-center font-mono text-sm px-7 py-3.5 border border-[#EDE7DC]/40 text-[#EDE7DC] hover:bg-[#EDE7DC]/10 transition-colors rounded-sm backdrop-blur-sm">
+          Ver o livro de cortes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto com nova animação -->
+  <section id="manifesto" class="py-24 md:py-40 overflow-hidden">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="font-sans text-2xl md:text-3xl leading-relaxed mb-8 reveal-text">
+        Existe barbearia que entra na conversa do bairro e barbearia que entra na novela.
+        A Casa do Corte tá aqui há 38 anos pela primeira razão.
+      </p>
+      <p class="font-sans text-lg leading-relaxed mb-8 text-[color:var(--ink)]/80 reveal-text">
+        A gente corta cabelo. Cabelo curto, cabelo comprido, cabelo crespo, cabelo que a avó cortou em casa durante 12 anos.
+        Aqui senta quem quer conversar e sair com a cabeça leve.
+      </p>
+      <p class="font-sans text-lg leading-relaxed text-[color:var(--ink)]/80 reveal-text">
+        Sem música alta, sem cerveja na cadeira, sem espelho coberto de adesivo.
+        A navalha e o café aparecem quando precisam aparecer, e só.
+      </p>
+    </div>
+  </section>
+
+  <!-- Livro de Cortes -->
+  <section id="cortes" class="py-24 md:py-32 border-t border-[color:var(--rule)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-16 reveal">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-[color:var(--accent)] mb-4">
+            Livro de Cortes
+          </p>
+          <h2 class="font-sans font-semibold text-4xl md:text-6xl leading-tight max-w-2xl tracking-[-0.02em]">
+            Não é tabela. É repertório.
+          </h2>
+        </div>
+        <p class="font-mono text-xs hidden md:block opacity-70">06 cortes · 2 barbeiros</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[color:var(--rule)] border border-[color:var(--rule)]">
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">07</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Conversa de Quintal</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            Cabelo curto, lateral reta, franja natural. Pra quem senta e fica três horas.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Tomás</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 80</span>
+          </div>
+        </article>
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">11</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Entrevero</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            Topete alto, degradê médio, bigode desenhado. Pra quem fala alto.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Tomás</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 95</span>
+          </div>
+        </article>
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">14</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Café com Barba</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            Corte clássico, barba feita a navalha, toalha quente. Inclui café.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Inês</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 110</span>
+          </div>
+        </article>
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">18</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Pé na Estrada</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            Repicado médio, franja lateral, produtos pra domar no dia a dia.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Inês</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 90</span>
+          </div>
+        </article>
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">23</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Sob Medida</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            A consulta. Quinze minutos no balcão definindo forma, tecido, rotina. Depois, o corte.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Tomás</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 130</span>
+          </div>
+        </article>
+
+        <article class="bg-[color:var(--bg)] p-8 md:p-12 reveal group hover:bg-[color:var(--ink)] hover:text-[color:var(--bg)] transition-colors duration-300">
+          <p class="font-mono text-7xl md:text-8xl font-medium leading-none mb-6 text-[color:var(--ink)]/20 group-hover:text-[color:var(--accent)] transition-colors">27</p>
+          <h3 class="font-sans text-3xl font-semibold mb-3">Retorno do Filho</h3>
+          <p class="font-sans text-base leading-relaxed mb-8 opacity-80">
+            Manutenção, no máximo 30 dias. Mantém forma e barbeiro.
+          </p>
+          <div class="flex items-center justify-between font-mono text-xs pt-4 border-t border-[color:var(--rule)] group-hover:border-[color:var(--rule)]/20">
+            <span>Inês</span>
+            <span class="font-medium group-hover:text-[color:var(--bg)]">R$ 65</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Barbeiros -->
+  <section id="barbeiros" class="py-24 md:py-32 border-t border-[color:var(--rule)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <h2 class="font-sans font-semibold text-4xl md:text-6xl leading-tight max-w-3xl tracking-[-0.02em]">
+          Dois barbeiros, uma opinião: cabelo bom demora.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+
+        <article class="reveal">
+          <div class="aspect-[4/5] overflow-hidden mb-8 bg-[color:var(--rule)] rounded-sm">
+            <img src="public/images/barbeiro-tomas.webp" alt="Retrato do barbeiro Tomás" class="w-full h-full object-cover">
+          </div>
+          <p class="font-sans italic text-2xl md:text-3xl leading-snug mb-8 text-[color:var(--accent)]">
+            "A cadeira é o confessionário mais barato da cidade."
+          </p>
+          <h3 class="font-sans text-3xl font-semibold mb-2">Tomás</h3>
+          <p class="font-sans text-lg leading-relaxed opacity-80 mb-6">
+            Cortes estruturados, clássico com twist, barba desenhada.
+          </p>
+          <p class="font-mono text-xs uppercase tracking-widest text-[color:var(--ink)]/60">
+            Cortes que ele gosta · 07 · 11 · 23
+          </p>
+        </article>
+
+        <article class="reveal">
+          <div class="aspect-[4/5] overflow-hidden mb-8 bg-[color:var(--rule)] rounded-sm">
+            <img src="public/images/barbeira-ines.webp" alt="Retrato da barbeira Inês" class="w-full h-full object-cover">
+          </div>
+          <p class="font-sans italic text-2xl md:text-3xl leading-snug mb-8 text-[color:var(--accent)]">
+            "Cabelo crespo merece cadeira e conversa. Não dura 15 minutos."
+          </p>
+          <h3 class="font-sans text-3xl font-semibold mb-2">Inês</h3>
+          <p class="font-sans text-lg leading-relaxed opacity-80 mb-6">
+            Texturização, cortes naturais, transição de comprimento.
+          </p>
+          <p class="font-mono text-xs uppercase tracking-widest text-[color:var(--ink)]/60">
+            Cortes que ela gosta · 14 · 18 · 27
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- A Casa -->
+  <section id="casa" class="py-24 md:py-32 border-t border-[color:var(--rule)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <h2 class="font-sans font-semibold text-4xl md:text-6xl leading-tight max-w-3xl tracking-[-0.02em]">
+          Não é cenário. É lugar.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-01.webp" alt="Interior da barbearia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-02.webp" alt="Penteadeira arrumada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-03.webp" alt="Café no balcão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-04.webp" alt="Ferramentas de barbearia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-05.webp" alt="Recepção da casa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="aspect-square md:aspect-[4/5] overflow-hidden bg-[color:var(--rule)] reveal rounded-sm group">
+          <img src="public/images/casa-06.webp" alt="Detalhe de ambiente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agendar -->
+  <section id="agendar" class="py-24 md:py-40 bg-[color:var(--ink)] text-[color:var(--bg)]">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="font-sans text-2xl md:text-4xl leading-snug mb-12 font-light text-[#EDE7DC]/90 reveal-text">
+        "A cadeira é sua na hora marcada. Se atrasar dez minutos, a gente serve o café de novo. Se atrasar trinta, avisa."
+      </p>
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Quero%20marcar%20com%20a%20Casa%20do%20Corte.%20Posso%20escolher%20a%20cadeira%3F"
+         class="reveal inline-block font-mono text-sm px-10 py-5 bg-[color:var(--accent)] text-[color:var(--bg)] hover:bg-[#702418] transition-colors rounded-sm">
+        Marcar a cadeira →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-[color:var(--rule)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Endereço</p>
+          <p class="font-sans text-base leading-relaxed opacity-90">
+            Rua Honório Lemes, 412<br>sala 02, Vila Madalena<br>São Paulo
+          </p>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Horários</p>
+          <ul class="font-mono text-sm space-y-2 opacity-90">
+            <li class="flex justify-between border-b border-[color:var(--rule)] pb-1"><span>ter/sex</span><span>10h às 20h</span></li>
+            <li class="flex justify-between border-b border-[color:var(--rule)] pb-1"><span>sábado</span><span>9h às 18h</span></li>
+            <li class="flex justify-between opacity-50 pt-1"><span>dom/seg</span><span>fechado</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Contato</p>
+          <ul class="font-mono text-sm space-y-2 opacity-90">
+            <li><a href="https://wa.me/5511999999999" class="hover:text-[color:var(--accent)] transition-colors">+55 11 9 9999-9999</a></li>
+            <li><a href="https://instagram.com" class="hover:text-[color:var(--accent)] transition-colors">@casadocorte</a></li>
+            <li><a href="mailto:ola@casadocorte.com.br" class="hover:text-[color:var(--accent)] transition-colors">ola@casadocorte.com.br</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between pt-8 border-t border-[color:var(--rule)] font-mono text-xs opacity-50">
+        <p>© 2026 Casa do Corte. Desde 1987.</p>
+        <p class="mt-2 md:mt-0">Vila Madalena · São Paulo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* ==========================================================
+   Casa do Corte — style.css
+   Paleta, fontes utilitárias e animações de reveal.
+   ========================================================== */
+
+:root {
+  --bg:     #EDE7DC;  /* off-white quente */
+  --ink:    #1A1715;  /* preto carvão */
+  --accent: #8B2E1F;  /* vermelho-tijolo-queimado */
+  --rule:   #C9BFA9;  /* linhas finas, divisores */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fontes utilitárias (carregadas via Google Fonts no <head>) */
+.font-sans {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+/* .font-display era a Fraunces; mantida como alias da sans (Geist) */
+.font-display {
+  font-family: 'Geist', system-ui, sans-serif;
+}
+
+/* ==========================================================
+   Reveal — scroll animações de entrada
+   ========================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* (stagger removido: estava atrasando o hover dos cards do Livro de Cortes) */
+
+/* ==========================================================
+   Foco acessível (acessibilidade)
+   ========================================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   Nav header durante scroll — Tailwind CDN não suporta
+   classes dinâmicas via JS, então reforçamos aqui.
+   ========================================================== */
+header#nav.scrolled {
+  background-color: rgba(237, 231, 220, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ==========================================================
+   Seleção de texto na cor de marca
+   ========================================================== */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
